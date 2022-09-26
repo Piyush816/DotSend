@@ -9,13 +9,14 @@ const PORT = process.env.PORT || 8000;
 
 const app = express();
 app.use(express.static(__dirname + "/public"));
-app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // connecting to db
 mongoose
   .connect(process.env.DATABASE_URL)
-  .then(() => console.log("Connected to DB"))
+  .then(() => {
+    console.log("Connected to DB");
+  })
   .catch((err) => console.log(err.message));
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024;

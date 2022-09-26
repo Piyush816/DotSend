@@ -38,7 +38,7 @@ function chooseFile() {
 function checkFileSize(selectedFile) {
   const MAX_FILE_SIZE = 10 * 1024 * 1024;
   if (selectedFile.size > MAX_FILE_SIZE) {
-    showToast("File size cannot be greater than 10MB", "error");
+    showToast("Please upload file under 10MB", "warning");
     return false;
   }
   return true;
@@ -57,7 +57,7 @@ function uploadFile() {
   const progress = document.getElementById("progress");
   const filePassword = document.getElementById("filePassword");
 
-  if (!file) return showToast("Please select a file", "error");
+  if (!file) return showToast("Please select a file", "warning");
 
   progress.style.display = "block";
 
@@ -100,7 +100,7 @@ function uploadFile() {
 
       urlInput.value = fileLink;
     } else {
-      showToast("Failed to upload file, Try again", "error");
+      showToast("Failed to upload file, Try again", "warning");
     }
   });
 
@@ -122,19 +122,19 @@ function copyLink() {
       showToast("Link Copied");
     })
     .catch((err) => {
-      showToast(err.message, "error");
+      showToast("Failed to copy on clipboard", "warning");
     });
 }
 
 function showToast(msg, type) {
-  if (type === "error") {
-    toast.classList.add("is-danger");
+  if (type === "warning") {
+    toast.classList.add("is-warning");
   }
   toast.style.top = "10px";
   toast.textContent = msg;
   setTimeout(() => {
     toast.textContent = "";
     toast.style.top = "200px";
-    toast.classList.remove("is-danger");
+    toast.classList.remove("is-warning");
   }, 3000);
 }

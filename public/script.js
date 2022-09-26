@@ -1,7 +1,6 @@
 const dragContainer = document.getElementById("dragContainer");
 const fileLinkContainer = document.getElementById("fileLinkContainer");
 const fileInfo = document.getElementById("fileInfo");
-const urlInput = document.getElementById("urlInput");
 const toast = document.querySelector("#toast");
 
 let file;
@@ -110,14 +109,21 @@ function uploadFile() {
 }
 
 function copyLink() {
-  urlInput.setSelectionRange(0, 99999); /* For mobile devices */
+  const urlInput = document.getElementById("urlInput");
+
   /* Select the text field */
   urlInput.select();
+  urlInput.setSelectionRange(0, 99999); /* For mobile devices */
 
   /* Copy the text inside the text field */
-  navigator.clipboard.writeText(urlInput.value);
-
-  showToast("Link Copied");
+  navigator.clipboard
+    .writeText(urlInput.value)
+    .then(() => {
+      showToast("Link Copied");
+    })
+    .catch((err) => {
+      showToast(err.message, "error");
+    });
 }
 
 function showToast(msg, type) {
@@ -128,7 +134,7 @@ function showToast(msg, type) {
   toast.textContent = msg;
   setTimeout(() => {
     toast.textContent = "";
-    toast.style.top = "-100%";
+    toast.style.top = "200px";
     toast.classList.remove("is-danger");
   }, 3000);
 }

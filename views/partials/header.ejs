@@ -6,12 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- font  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&display=swap" rel="stylesheet">
     <!-- font awesome  -->
     <link
       rel="stylesheet"
@@ -26,36 +23,11 @@
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
     <!-- custom css  -->
-    <style>
-      body {
-        font-family: "Poppins", sans-serif;
-      }
-      .dashed {
-        border: 2px dashed #3e56c4;
-        border-radius: 3px;
-      }
-      .dashed.active {
-        background-color: #3e57c42d;
-      }
-      #fileLinkContainer,
-      #progress {
-        display: none;
-      }
-      #toast {
-        position: absolute;
-        top: -100%;
-      left: 50%;
-
-      transform: translateX(-50%);
-        transition: all 300ms ease-in-out;
-        z-index: 100;
-      }
-    </style>
+   <link rel="stylesheet" href="/styles.css">
 
     <script src="/script.js" defer></script>
     <title>Dotsend</title>
   </head>
   <body>
     <div id="toast" class="notification is-success"></div>
-    <main class="columns container mx-auto">
-      <div class="column is-half mx-auto mt-6">
+    <main class="container mx-auto">

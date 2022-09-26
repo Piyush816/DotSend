@@ -1,0 +1,40 @@
+body {
+  font-family: "Heebo", cursive;
+}
+.dashed {
+  border: 2px dashed #0263d1;
+  border-radius: 3px;
+}
+.dashed.active {
+  background-color: #3e57c42d;
+}
+#fileLinkContainer,
+#progress {
+  display: none;
+}
+#toast {
+  top: 200px;
+  width: min(650px, 95%);
+  margin-inline: auto;
+  transition: all 300ms ease-in-out;
+}
+
+.primary-bg {
+  background-color: #0263d1;
+  color: white;
+}
+
+.primary-bg.button:hover {
+  color: white;
+}
+
+.box {
+  width: min(650px, 95%);
+  margin-inline: auto;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .box {
+    padding: 14px;
+  }
+}

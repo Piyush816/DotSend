@@ -1,6 +1,7 @@
 # Dotsend
 A file sharing web app which allows you to share files. you can also set password to protect the file from strangers.
 
+Checkout the website [click here](https://dotsend.onrender.com/).
 
 ### Key features
 1. Upload file upto 10mb.
